@@ -40,6 +40,8 @@ Secrets are delivered encrypted, decrypted inside the microVM with a one-time ke
 
 ## 3. Isolation model
 
+> **Early stage:** per-run microVMs are rented from a provider billed per second rather than operated by the platform; see [31-tech-stack](./31-tech-stack.md) §3.4. The isolation rules below are unchanged.
+
 ⚑ **Recommendation: one Firecracker-class microVM per run.**
 
 ```mermaid

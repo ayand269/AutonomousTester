@@ -191,7 +191,7 @@ interface AIGateway {
 
 ## 7. Technology evaluation
 
-The brief lists candidates; evaluation below. Items marked ⚑ require approval. The full proposed stack, including two departures from this table (Temporal for Run orchestration, Fargate for the Analysis Tier), is in [31-tech-stack](./31-tech-stack.md).
+The brief lists candidates; evaluation below. Items marked ⚑ require approval. The proposed stack is in [31-tech-stack](./31-tech-stack.md): a $50/month early-stage stack (single VPS, pg-boss, rented per-run microVMs) that departs from this table, and a funded scale-up target that largely matches it.
 
 | Concern | Candidate | Recommendation | Reasoning |
 |---|---|---|---|

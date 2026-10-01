@@ -15,9 +15,9 @@
 | Q-ANA-3 | Impact parameters (τ, decay, hop limit) defaults? | Values in [12](./12-change-impact-analysis.md) §2.2, calibrated on fault-injection harness | M2 | Eng |
 | Q-ANA-4 | How much source code should be parsed initially? | All TS/JS under detected Applications, excluding `node_modules`, build output, generated code, files > 1 MB | Phase 0 | Eng |
 | **Execution** |||||
-| Q-EXE-1 ⚑ | microVM per run vs pooled cloud VM per run for MVP? | microVM if S1 shows ops is manageable; pooled VM fallback otherwise (proposed sequencing: [31](./31-tech-stack.md) §2.4) | Phase 0 (S1) | Eng + Security |
+| Q-EXE-1 ⚑ | microVM per run vs pooled cloud VM per run for MVP? | microVM if S1 shows ops is manageable; pooled VM fallback otherwise (early stage: rented per-run microVMs, [31](./31-tech-stack.md) §3.4) | Phase 0 (S1) | Eng + Security |
 | Q-EXE-2 | Browser matrix default? | Chromium only in MVP; Firefox/WebKit opt-in P2 | M1 | Product |
-| Q-EXE-3 ⚑ | Which cloud provider(s)? | Single provider with nested-virt/bare-metal options and managed Postgres/Redis/KMS; AWS proposed in [31](./31-tech-stack.md) §2.7 | Phase 0 | Eng + Finance |
+| Q-EXE-3 ⚑ | Which cloud provider(s)? | Single provider with nested-virt/bare-metal options and managed Postgres/Redis/KMS; early stage: Hetzner VPS + microVM provider, scale-up: AWS ([31](./31-tech-stack.md) §2, §5) | Phase 0 | Eng + Finance |
 | Q-EXE-4 | Default exploration budgets? | [11](./11-runtime-exploration.md) §2 values, recalibrated on reference apps | M2 | Eng |
 | Q-EXE-5 | How should long-running tests be handled? | Run budgets + per-test checkpoints; sharding in P2 | M1 | Eng |
 | Q-EXE-6 | Private package registries / private base images? | Registry credentials as build-scoped secrets; egress allow-list entry | M1 | Eng |
@@ -34,7 +34,7 @@
 | Q-INT-4 | Figma/design in MVP? | No — P5 | Phase 0 | Product |
 | Q-INT-5 | Verdict thresholds θe/θr/θc initial values? | Conservative (bias to UNKNOWN); set on eval suite at M3 | M3 | Eng |
 | **AI** |||||
-| Q-AI-1 ⚑ | Which AI models/providers initially? | One frontier-provider family for Large/Medium tiers + a small fast model; gateway supports ≥2 providers from day one; models proposed in [31](./31-tech-stack.md) §2.5 | Phase 0 | Eng + Legal |
+| Q-AI-1 ⚑ | Which AI models/providers initially? | One frontier-provider family for Large/Medium tiers + a small fast model; gateway supports ≥2 providers from day one; models proposed in [31](./31-tech-stack.md) §3.5 | Phase 0 | Eng + Legal |
 | Q-AI-2 | Allow customer-supplied model keys / endpoints (BYO)? | P3, enterprise | P2 | Product |
 | Q-AI-3 | Default AI data policy? | `code_snippets` with zero-retention provider terms; org can lower to `metadata_only`/`disabled` | Phase 0 | Legal + Security |
 | **CI/CD** |||||

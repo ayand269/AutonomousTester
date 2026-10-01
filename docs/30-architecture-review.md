@@ -91,7 +91,7 @@ Protect the MVP from these, even if they are tempting in demos:
 | D4 | Git providers: GitHub M1, GitLab M4 | Approve | GitLab at M1 adds ~1 integration's worth of work before first loop | 16 |
 | D5 | Sandbox isolation: microVM per run (fallback pooled VM) | Approve after spike S1 | Containers-only is not acceptable for multi-tenant untrusted code | 17 |
 | D6 | Three trust zones incl. separate cloud accounts | Approve | Merging zones increases blast radius | 05, 19 |
-| D7 | Cloud provider | AWS proposed in [31](./31-tech-stack.md) §2.7 (needs nested virt / bare metal for microVMs) | Affects cost & ops | 06 |
+| D7 | Cloud provider | Early stage: Hetzner VPS + rented per-run microVM provider; scale-up: AWS ([31](./31-tech-stack.md) §2, §5) | Affects cost & ops | 06, 31 |
 | D8 | Primary database: PostgreSQL (+RLS) | Approve | MongoDB workable; requires app-only tenancy enforcement | 22 |
 | D9 | AI providers/models & default AI data policy (`code_snippets`, zero retention) | Decide with Legal | Stricter policy reduces diagnosis quality | 15 |
 | D10 | Default check behavior: non-blocking | Approve | Blocking early risks trust if FP rate is high | 16 |
@@ -99,8 +99,8 @@ Protect the MVP from these, even if they are tempting in demos:
 | D12 | Generated tests stored as platform DSL, not written to repos | Approve | Writing to repos conflicts with "no code modification" | 13 |
 | D13 | Investment in evaluation harness (reference apps + fault injection) as Phase 0/M1 work | Approve | Without it, impact/verdict tuning is guesswork | 15, 27 |
 | D14 | Design-partner cohort & success criteria | Approve [26](./26-mvp.md) §5–6 | — | 26 |
-| D15 | Run orchestration on Temporal (Zone 1 only) instead of BullMQ | Approve | BullMQ fallback requires hand-built timeouts, heartbeats, supersession, Postgres-owned state machine | 31 §3.1 |
-| D16 | Analysis Tier on Fargate tasks instead of self-managed gVisor | Approve | gVisor fallback adds sandbox runtime ops in account B | 31 §3.2 |
+| D15 | $50/month early-stage stack: one VPS (Postgres, pg-boss, no Redis/Temporal), rented per-run microVMs, libsodium secrets, in-VM egress labeling; AWS topology deferred to Stage 2 triggers | Approve | Funded AWS topology from day one costs ~$3k+/month at MVP volume | 31 §3, §6, §7 |
+| D16 | Analysis Tier in a short-lived rented microVM with no secrets (instead of gVisor) | Approve | Parsing on the control-plane VPS would break the Zone 1 rule | 31 §3.3 |
 
 ## 7. Recommendation
 

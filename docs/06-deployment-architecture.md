@@ -11,6 +11,8 @@
 
 ## 2. MVP deployment (single region)
 
+> **Funded target.** This is the Stage 2 topology. Under the current $50/month budget, the early stage runs on one VPS plus rented per-run microVMs; see [31-tech-stack](./31-tech-stack.md) §2–§6 for the stack and the triggers for moving here.
+
 ```mermaid
 flowchart TB
     subgraph Internet
