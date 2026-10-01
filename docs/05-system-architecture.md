@@ -191,7 +191,7 @@ interface AIGateway {
 
 ## 7. Technology evaluation
 
-The brief lists candidates; evaluation below. Items marked ⚑ require approval.
+The brief lists candidates; evaluation below. Items marked ⚑ require approval. The full proposed stack, including two departures from this table (Temporal for Run orchestration, Fargate for the Analysis Tier), is in [31-tech-stack](./31-tech-stack.md).
 
 | Concern | Candidate | Recommendation | Reasoning |
 |---|---|---|---|

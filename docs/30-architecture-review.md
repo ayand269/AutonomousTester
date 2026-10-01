@@ -91,7 +91,7 @@ Protect the MVP from these, even if they are tempting in demos:
 | D4 | Git providers: GitHub M1, GitLab M4 | Approve | GitLab at M1 adds ~1 integration's worth of work before first loop | 16 |
 | D5 | Sandbox isolation: microVM per run (fallback pooled VM) | Approve after spike S1 | Containers-only is not acceptable for multi-tenant untrusted code | 17 |
 | D6 | Three trust zones incl. separate cloud accounts | Approve | Merging zones increases blast radius | 05, 19 |
-| D7 | Cloud provider | Pick one (needs nested virt / bare metal for microVMs) | Affects cost & ops | 06 |
+| D7 | Cloud provider | AWS proposed in [31](./31-tech-stack.md) §2.7 (needs nested virt / bare metal for microVMs) | Affects cost & ops | 06 |
 | D8 | Primary database: PostgreSQL (+RLS) | Approve | MongoDB workable; requires app-only tenancy enforcement | 22 |
 | D9 | AI providers/models & default AI data policy (`code_snippets`, zero retention) | Decide with Legal | Stricter policy reduces diagnosis quality | 15 |
 | D10 | Default check behavior: non-blocking | Approve | Blocking early risks trust if FP rate is high | 16 |
@@ -99,7 +99,9 @@ Protect the MVP from these, even if they are tempting in demos:
 | D12 | Generated tests stored as platform DSL, not written to repos | Approve | Writing to repos conflicts with "no code modification" | 13 |
 | D13 | Investment in evaluation harness (reference apps + fault injection) as Phase 0/M1 work | Approve | Without it, impact/verdict tuning is guesswork | 15, 27 |
 | D14 | Design-partner cohort & success criteria | Approve [26](./26-mvp.md) §5–6 | — | 26 |
+| D15 | Run orchestration on Temporal (Zone 1 only) instead of BullMQ | Approve | BullMQ fallback requires hand-built timeouts, heartbeats, supersession, Postgres-owned state machine | 31 §3.1 |
+| D16 | Analysis Tier on Fargate tasks instead of self-managed gVisor | Approve | gVisor fallback adds sandbox runtime ops in account B | 31 §3.2 |
 
 ## 7. Recommendation
 
-Approve Phase 0: sign off D1–D14, then run spikes S1–S4. Replace the hypotheses in [04](./04-non-functional-requirements.md) and [17](./17-cloud-execution.md) with measured numbers before M1 starts. **Do not begin production implementation until this review is accepted.**
+Approve Phase 0: sign off D1–D16, then run spikes S1–S4. Replace the hypotheses in [04](./04-non-functional-requirements.md) and [17](./17-cloud-execution.md) with measured numbers before M1 starts. **Do not begin production implementation until this review is accepted.**

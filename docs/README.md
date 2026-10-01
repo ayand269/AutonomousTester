@@ -49,6 +49,7 @@ This folder is the engineering specification for a cloud-hosted, CI/CD-triggered
 | 28 | [Risks & Challenges](./28-risks-and-challenges.md) | 30 challenges analysed |
 | 29 | [Open Questions](./29-open-questions.md) | Questions with recommended defaults |
 | 30 | [Architecture Review](./30-architecture-review.md) | Solid / risky / missing / critical decisions |
+| 31 | [Tech Stack](./31-tech-stack.md) | Proposed MVP stack per layer; resolves stack ⚑ items |
 
 ## Conventions
 
